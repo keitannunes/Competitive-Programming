@@ -1,3 +1,7 @@
+/*
+ * https://dmoj.ca/problem/coci06c6p1
+ */
+
 #include <iostream>
 #include <map>
 using namespace std;
