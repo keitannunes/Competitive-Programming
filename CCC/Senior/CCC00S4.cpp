@@ -13,12 +13,9 @@ int main() {
     cin >> N;
     vector<int> clubs(N);
     vector<int> scores(dist + 1);
-    int num;
     for (int i = 0; i < N; i++) {
-        cin >> num;
-        clubs[i] = num;
+        cin >> clubs[i];
     }
-
     scores[0] = 1;
 
     for (int currDist = 1; currDist <= dist; currDist++) {
