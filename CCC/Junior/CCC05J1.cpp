@@ -7,28 +7,20 @@
 using namespace std;
 
 int main() {
-    int dayTime = 0;
-    int eveningTime = 0;
-    int nightTime = 0;
-    double planA = 0.0;
-    double planB = 0.0;
-    double epsilon = 0.000001;
-    std::cin >> dayTime;
-    std::cin >> eveningTime;
-    std::cin >> nightTime;
-    for (int i = 100; i < dayTime; i++) {
-        planA += 0.25;
+    int d,e,w;
+    scanf("%i",&d);
+    scanf("%i",&e);
+    scanf("%i",&w);
+    int pA = max(0,d-100)*25 + 15*e + 20*w;
+    int pB = max(0,d-250)*45 + 35*e + 25*w;
+    printf("Plan A costs %.2f\n",pA/100.0);
+    printf("Plan B costs %.2f\n",pB/100.0);
+    if (pA < pB) {
+        printf("Plan A is cheapest.");
+    } else if (pB < pA) {
+        printf("Plan B is cheapest.");
+    } else {
+        printf("Plan A and B are the same price.");
     }
-    planA += (eveningTime * 0.15);
-    planA += (nightTime * 0.20);
-    for (int j = 250; j < dayTime; j++) {
-        planB += 0.45;
-    }
-    planB += (eveningTime * 0.35);
-    planB += (nightTime * 0.25);
-    printf("Plan A costs %.2f \n", planA);
-    printf("Plan B costs %.2f \n", planB);
-    if (std::abs(planA - planB) < epsilon) std::cout << "Plan A and B are the same price.";
-    else if (planA > planB) std::cout << "Plan B is cheapest.";
-    else std::cout << "Plan A is cheapest." ;
+    return 0;
 }
